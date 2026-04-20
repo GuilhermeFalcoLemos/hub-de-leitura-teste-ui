@@ -1,10 +1,10 @@
 describe("Funcionalidade Contato", () => {
 
   beforeEach(() => {
-    cy.visit('http://localhost:3000/index.html')
+    cy.visit('index.html')
   });
   it("Deve preencher formulario de contato om sucesso", () => {
-    
+
     cy.get('[name="name"]').type('Guilherme')
     cy.get('[name="email"]').type('teste.estudo@teste.com')
     cy.get('[name="subject"]').select('Suporte Técnico')
@@ -15,7 +15,7 @@ describe("Funcionalidade Contato", () => {
   });
 
   it("Vaidar mensagem de erro ao enviar sem nome", () => {
-    
+
     cy.get('[name="name"]').clear()
     cy.get('[name="email"]').type('teste.estudo@teste.com')
     cy.get('[name="subject"]').select('Suporte Técnico')
@@ -26,7 +26,7 @@ describe("Funcionalidade Contato", () => {
   });
 
   it("Vaidar mensagem de erro ao enviar sem email", () => {
-    
+
     cy.get('[name="name"]').type('Guilherme')
     cy.get('[name="email"]').clear()
     cy.get('[name="subject"]').select('Suporte Técnico')
@@ -37,7 +37,7 @@ describe("Funcionalidade Contato", () => {
   });
 
   it("Vaidar mensagem de erro ao enviar sem assunto", () => {
-    
+
     cy.get('[name="name"]').type('Guilherme')
     cy.get('[name="email"]').type('teste.estudo@teste.com')
     // cy.get('[name="subject"]').select('Suporte Técnico')
@@ -48,7 +48,7 @@ describe("Funcionalidade Contato", () => {
   });
 
   it("Vaidar mensagem de erro ao enviar sem mensagem", () => {
-    
+
     cy.get('[name="name"]').type('Guilherme')
     cy.get('[name="email"]').type('teste.estudo@teste.com')
     cy.get('[name="subject"]').select('Suporte Técnico')
