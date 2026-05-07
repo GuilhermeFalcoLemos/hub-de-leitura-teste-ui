@@ -11,7 +11,7 @@ describe('Funcionalidade: Catálogo de livros', () => {
         cy.get('#cart-count').should('contain', 1)
     });
 
-    it('Deve clicar em todos os boõptes de adicionar', () => {
+    it('Deve clicar em todos os botões de adicionar', () => {
         cy.get(' .btn-primary').click({ multiple: true })
 
     });
