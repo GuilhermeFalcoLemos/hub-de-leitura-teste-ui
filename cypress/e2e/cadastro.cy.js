@@ -8,6 +8,9 @@ describe('Funcionalidade: Cadastro no Hub de Leitura', () => {
         cadastroPage.visitarPaginaCadastro()
     });
 
+    afterEach(() => {
+        cy.screenshot()
+    });
     it('Deve realizar o cadasstro com sucesso, usando função JS', () => {
         let email = `exemplocadastro${Date.now()}@teste.com`
         cy.get('#name').type('Guilherme FaLco')
